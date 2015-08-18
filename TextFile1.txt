@@ -1,0 +1,93 @@
+// This is the text editor interface. 
+// Anything you type or change here will be seen by the other person in real time.
+Q: Write a function that takes as input a natural number C and outputs all of the ways that a group of positive numbers can be summed to give C 
+
+if C is 6, output 
+6 
+1 + 5 
+2 + 4 
+1 + 2 + 3 
+
+
+and if C is 10, output 
+10 
+1 + 9 
+2 + 8 
+3 + 7 
+4 + 6 
+1 + 2 + 7 
+1 + 3 + 6 
+1 + 4 + 5 
+2 + 3 + 5 
+1 + 2 + 3 + 4 
+
+c is 5
+5
+1+4
+2+3
+
+
+
+// first
+sum 2 numbers to get total
+the numbers would start with 1-c
+then n = 2-c
+then n = 3-c 
+until n = c
+
+then sum 3 oor more numbers to get total
+the first woul be 1  + 2 - c
+second would be 1 + 3 - c
+
+the numbers 
+
+first print c
+then print (c-1) + 1
+then print (c-2) + 2
+
+10 
+print c
+1 + 9 
+print (n = 1) + (c-n)
+2 + 8 
+print (n = 2) + (c-n)
+3 + 7 
+print (n = 3) + (c-n)
+4 + 6 
+print (n = 4) + (c-n)
+1 + 2 + 7 
+print (n = (1 + 2)) + (c-n)
+1 + 3 + 6 
+print (n = (1 + 3)) + (c-n)
+1 + 4 + 5
+print (n= (1 + 4) + (c-n))
+2 + 3 + 5 
+print (n= 2+3) + (c-n)
+1 + 2 + 3 + 4
+print (n= (1+2+3) + (c-n))
+
+c = 10
+1 + 9
+1 + 2 + 7
+1 + 2 + 3 + 4
+1 + 3 + 6
+
+foo (int c)
+{
+    if (c == 1)
+        return;
+    
+    // example c = 9
+    
+    // c / 2
+    // c - 1 / 2
+    int n = 2;
+    while (n < c)
+    {
+        print n + c - n;     
+    }
+    
+    
+    foo (c-1);
+    
+}
