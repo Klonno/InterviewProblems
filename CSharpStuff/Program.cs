@@ -21,7 +21,7 @@ namespace CSharpStuff
         //
         [Display(Name = "Product Number")]
         [Range(0, 5000)]
-        public int ProductID { get; set; }
+        static public int ProductID { get; set; }
 
         [Display(Name = "Name")]
         [Required]
@@ -36,7 +36,10 @@ namespace CSharpStuff
         
         static void Main(string[] args)
         {
-      
+
+            // DataAnnotation
+            ProductID = 5001;
+
             // Error	2	'CSharpStuff.TestClass' does not contain a constructor that takes 0 arguments	C:\Users\scott\Documents\Visual Studio 2013\Projects\InterviewProblems\CSharpStuff\Program.cs	12	35	CSharpStuff
             // when overiding the default ctor a default ctor IS NOT created.
             // TestClass testClass = new TestClass();
@@ -81,13 +84,11 @@ namespace CSharpStuff
             // All reference values were changed in ChangeRefType
             //
             testClass.ChangeRefType(refClass);
-            
             //
             // string is a reference type, but does not behave like a reference type!
             // The string paramater is not changed!
             //
             testClass.ChangeRefType(foo);
-
             //
             // This will change the string!
             //
@@ -108,6 +109,10 @@ namespace CSharpStuff
             {
                 Console.WriteLine(e.Message);
             }
+
+            ThreadSafeSingleton singleton = ThreadSafeSingleton.Singleton;
+            ThreadSafeSingleton singleton2 = ThreadSafeSingleton.Singleton;
+
 
         }
 
