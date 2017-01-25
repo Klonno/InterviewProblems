@@ -20,7 +20,7 @@ namespace CSharpStuff
         // The data annotation attributes fall into three categories: validation attributes, display attributes, and data modeling attributes. This topic describes these attributes and provides examples.
         //
         [Display(Name = "Product Number")]
-        [Range(0, 5000)]
+        [Range(0, 5000, ErrorMessage = "Value out of range")]
         static public int ProductID { get; set; }
 
         [Display(Name = "Name")]
