@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chess.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reverser.cs" />
     <Compile Include="TestClass.cs" />
     <Compile Include="ThreadSafeSingleton.cs" />
   </ItemGroup>

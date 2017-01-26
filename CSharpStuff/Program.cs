@@ -113,6 +113,12 @@ namespace CSharpStuff
             ThreadSafeSingleton singleton = ThreadSafeSingleton.Singleton;
             ThreadSafeSingleton singleton2 = ThreadSafeSingleton.Singleton;
 
+            Reverser reverser = new Reverser();
+
+            int reversedInt = reverser.Reverse(321);
+            string reversedString = reverser.Reverse("foobars");
+
+            ChessBoard chessBoard = new ChessBoard();
 
         }
 
