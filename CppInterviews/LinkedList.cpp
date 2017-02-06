@@ -16,13 +16,17 @@ LinkedList::~LinkedList()
 // DFS, Depth First
 //
 void LinkedList::Traverse(BSTNode* root)
-{ // Each child of a tree is a root of its subtree.
-    if (root->left != NULL){
-        Traverse(root->left);
-    }
-    // std::cout << root->value;
-    if (root->right != NULL){
-        Traverse(root->right);
+{ 
+    // Each child of a tree is a root of its subtree.
+    if (NULL != root)
+    {
+        if (root->left != NULL){
+            Traverse(root->left);
+        }
+        // std::cout << root->value;
+        if (root->right != NULL){
+            Traverse(root->right);
+        }
     }
 }
 

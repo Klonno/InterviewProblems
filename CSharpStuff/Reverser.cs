@@ -7,6 +7,45 @@ namespace CSharpStuff
 {
     class Reverser
     {
+        public string ReverseEveryOtherWord(string phrase)
+        {
+            const string Space = " ";
+            char[] arr = { ' ' };
+
+            //
+            string[] words = phrase.Split(arr);
+            string changed = string.Empty;
+
+            for (int i = 0; i < words.Length; ++i)
+            {
+                if (i % 2 == 0)
+                {
+                    words[i] = new String(ReverseWord(words[i].ToArray()));
+                }
+                changed += words[i] + Space;
+            }
+            changed = changed.TrimEnd();
+            //Console.WriteLine(changed);
+            return changed;
+        }
+   
+        private static char[] ReverseWord(char[] word)
+        {
+
+            char temp;
+            int i = 0;
+            int j = word.Length - 1;
+
+            for (i = 0; i <= j; ++i, --j)
+            {
+                temp = word[i];
+                word[i] = word[j];
+                word[j] = temp;
+            }
+
+            return word;
+        }
+
         public string Reverse(string str)
         {
             int lastIndex;

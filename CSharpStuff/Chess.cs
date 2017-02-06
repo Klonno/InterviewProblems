@@ -27,6 +27,8 @@ namespace CSharpStuff
  
         private ChessSpace[,] Spaces = new ChessSpace[NumberOfRows, SpacesPerRow];
 
+        public string PlayerName { get; set; }
+
         public ChessBoard()
         {
             ChessSpace.SpaceColor currentColor = ChessSpace.SpaceColor.Black;

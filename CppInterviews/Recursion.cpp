@@ -95,10 +95,6 @@ int Recursion::NaturalNumberCombos(int c)
     else
     {
         return NaturalNumberCombos(c, 1); // c - 1);
-        //int n;
-        //int x = NaturalNumberCombos(c - 1);
-       // n = c + x;
-       // return n;    /*self call  to function sum() */
     }
 }
 int Recursion::NaturalNumberCombos(int c, int start) //, int remainder)
@@ -107,15 +103,7 @@ int Recursion::NaturalNumberCombos(int c, int start) //, int remainder)
     {
         return 1;
     }
-    //else if (int remainder = (c - start) > 0)
-    //{
-    //    while (remainder = (c - start) > 0)
-    //    {
-    //        std::cout << start << " + " << c - start << " ";
-    //        NaturalNumberCombos(c, start + 1);
-    //    }
-    //    return NaturalNumberCombos(c, start + 1);
-    //}
+
     else
     {
         std::cout << start << " + " << c - start << " = " << c << std::endl;

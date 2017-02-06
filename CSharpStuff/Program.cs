@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 
 namespace CSharpStuff
 {            
@@ -118,7 +119,47 @@ namespace CSharpStuff
             int reversedInt = reverser.Reverse(321);
             string reversedString = reverser.Reverse("foobars");
 
+
+            // lLass is a reference object, equal operator sets a REFERENCE to the object.
+            // STruct is a value object, equal operator creates a new shallow copy.
             ChessBoard chessBoard = new ChessBoard();
+            chessBoard.PlayerName = "Bill";
+            // chessboard1 is now a reference to chessboard.
+            ChessBoard chessBoard1 = chessBoard;
+            // both chessboard and chessboard1 have the name "Jo" now.
+            chessBoard1.PlayerName = "Jo";
+            TestStruct testA = new TestStruct();
+            testA.Name = "foo";
+            TestStruct testB;
+            // TestB is a shallow copy of TestA
+            testB = testA;
+            // TestB has the name "bar", TestB still has the name "foo".
+            testB.Name = "bar";
+
+            int[] arr = new int[] { 2 };
+            int distance = BST.FindEdges(arr, 2, 2);
+            //Debug.Assert(distance == 0, "distance should = 0");
+
+            //arr = new int [] { };
+            //distance = BST.FindEdges(arr, 2, 2);
+            //Debug.Assert(distance == -1, "distance should = -1");
+
+            //arr = new int[] { 2, 5, 1, 6 };
+            //distance = BST.FindEdges(arr, 2, 7);
+            //Debug.Assert(distance == -1, "distance should = -1");
+
+            //arr = new int[] { 2, 5, 1, 6 };
+            //distance = BST.FindEdges(arr, 1, 6);
+            //Debug.Assert(distance == 2, "distance should = 2");
+
+            arr = new int[] {7, 2, 5, 1, 6 };
+            distance = BST.FindEdges(arr, 1, 6);
+            //      Debug.Assert(distance == 2, "distance should = 2");
+
+            // Expected output  "eth quick nworb..."
+            string reverseEveryOther = "The quick brown fox jumped over the lazy dog";
+            string everyOtherReversed = reverser.ReverseEveryOtherWord(reverseEveryOther);
+            Console.WriteLine(everyOtherReversed);
 
         }
 
